@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMDB_Clone</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    
+    <!-- Font Awesome Cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Primary Wrapper -->
+    <div class="wrapper">       
+        <div class="logo">            
+            <div class="container nav-flex">                
+                <!--Logo-->
+                <a href="./index.html" id="logo">
+                    <img src="./Assets/IMDB_Logo.jpeg" alt="logo" style="height: 30px; width:50px; margin-right: 10px;">
+                    <h2>i<span style="color:#d4aa11">MDB-Clone</span></h2>
+                </a>
+                <a href="./MoviePage/moviePg.html" id="lastSearch">Recent Search</a>
+                <a href="./Fav/fav.html" id="fav"><i style="color: crimson;" class="fa-solid fa-heart"></i>  Favourite</a>
+            </div>
+        </div>
+        <!-- end of logo -->
+        
+        <!-- Search container -->
+        <div class="search-container">
+            <div class="search-element">
+                <h1>Search Movie : </h1>
+                <input type="text" class="form-control" placeholder="Search Movie" id="movie-search-box">
+
+                <!--Magnifying -->
+                <!-- <button id ="search-btn" ><i class="fa-solid fa-magnifying-glass search-icon"></i></button> -->
+
+                <div class="search-list" id="search-list">
+                    <!-- list here 
+                    <div class="search-list-item">
+                        <div class="search-item-thumbnail">
+                            <img src="/Assets/medium-cover.jpg" alt="movie">
+                        </div>
+
+                        <div class="search-item-info">
+                            <h3>Guardians of the Galaxy vol. 2</h3>
+                            <p>2017</p>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+        <!-- end of Search container -->
+
+    </div>
+
+    <!-- Custom JS -->
+    <script src="./script/script.js"></script>
+
+
+</body>
+</html>
