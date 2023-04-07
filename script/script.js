@@ -45,7 +45,7 @@ const displayMovieList = (movies) => {
             moviePoster = movies[i].Poster; // Set found image address
         } 
         else {
-            moviePoster = ".\Assets\NO_Image.png"; //If image not found then set default image
+            moviePoster = "../Assets/NO_Image.png"; //If image not found then set default image
         }
         //Add a matched result to list
         movieListItem.innerHTML = `
