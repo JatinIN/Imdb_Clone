@@ -1,0 +1,27 @@
+.result-grid{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-image: linear-gradient(to left,#42275a, #405caa);
+    padding: 10px;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.delete-btn{
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: rgb(114, 31, 31);
+    position: absolute;
+    bottom: 0.5%;
+    right: 0.5%;
+    cursor: pointer;
+}
+
+.delete-btn:hover{
+    background-color: cadetblue;
+}
