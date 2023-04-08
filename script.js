@@ -45,7 +45,7 @@ const displayMovieList = (movies) => {
             moviePoster = movies[i].Poster; // Set found image address
         } 
         else {
-            moviePoster = "./Assets/NO_Image.png"; //If image not found then set default image
+            moviePoster = "Assets/NO_Image.png"; //If image not found then set default image
         }
         //Add a matched result to list
         movieListItem.innerHTML = `
@@ -71,8 +71,8 @@ const loadMovieDetails = () => {
             searchList.classList.add('hide-search-list'); //Add CSS
             SearchBox.value = ""; //Reset search box
             localStorage.setItem('movieID',movie.dataset.id); // Set movie id to localstorage for later use
-            let dir = window.location.origin + "./MoviePage/moviePg.html"; // Custom URL for result page
-            window.location.href = "./MoviePage/moviePg.html"; //Redirect to a new page
+            let dir = window.location.origin + "MoviePage/moviePg.html"; // Custom URL for result page
+            window.location.href = "MoviePage/moviePg.html"; //Redirect to a new page
         })
     })
 }

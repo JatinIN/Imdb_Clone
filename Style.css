@@ -21,7 +21,7 @@ body {
   font-family: "Inter", sans-serif;
   /* background-image: linear-gradient(to left,#42275a, #734b6d), url(/Assets/popcorn_img.jpeg);*/
   /* Background Image with Blur effect */
-  background-image: url(./Assets/popcorn_img.jpeg);  
+  background-image: url(Assets/popcorn_img.jpeg);  
   backdrop-filter: blur(15px); 
   background-size: cover;
   background-position: center;
