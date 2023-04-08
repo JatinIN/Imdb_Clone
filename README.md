@@ -16,4 +16,4 @@ $_Omdb API
 deleteMovie ()
 getData()
 addToFav()
-displayMovieDetails()
+displayMovieDetails().
