@@ -1,4 +1,4 @@
-const SearchBox = document.querySelector('#movie-search-box'); //Input box
+const movieSearchBox = document.querySelector('#movie-search-box'); //Input box
 const searchList = document.querySelector('#search-list'); // Autocomplete box
 const resultGrid = document.querySelector('#result-grid'); // Result container
 
@@ -8,8 +8,8 @@ if(!localStorage.getItem('favMovies')){
     localStorage.setItem('favMovies',JSON.stringify(favMovies));
 }
 // Function to get movies from Omdb API
-async function loadMovies(MovieId) {                                           // MovieId here is Movie Name.
-    const URL = `http://www.omdbapi.com/?s=${MovieId}&page=1&apikey=76ef9c9f`; //Base URL
+async function loadMovies(movieId) {                                           // movieId here is Movie Name.
+    const URL = `http://www.omdbapi.com/?s=${movieId}&page=1&apikey=76ef9c9f`; //Base URL
     const res = await fetch(`${URL}`); //Fetch data from server
     const data = await res.json(); //Arrange data to readable format (JSON)
     // Check if everything is Okay
@@ -20,11 +20,11 @@ async function loadMovies(MovieId) {                                           /
 
 //Find movies as you type any character
 const findMovies = () => {
-    let MovieId = (SearchBox.value).trim(); // Get typed value and remove whitespace
+    let movieId = (movieSearchBox.value).trim(); // Get typed value and remove whitespace
     //Perform operation only if any character is present in the search box
-    if (MovieId.length > 0) {
+    if (movieId.length > 0) {
         searchList.classList.remove('hide-search-list'); // show the autocomplete box
-        loadMovies(MovieId); //Load movies from API
+        loadMovies(movieId); //Load movies from API
     } else {
         searchList.classList.add('hide-search-list'); // Hide the autocomplete box if no character is present in the search box
     }
@@ -35,14 +35,14 @@ const displayMovieList = (movies) => {
     searchList.innerHTML = ""; //clear the list of movies
     
     //Get all matching movies related to typed charactes
-    for (let i = 0; i < movies.length; i++) {
+    for (let id = 0; id < movies.length; id++) {
         let movieListItem = document.createElement('div'); // Create a Div
-        movieListItem.dataset.id = movies[i].imdbID; // Set Id to each movie result
+        movieListItem.dataset.id = movies[id].imdbID; // Set Id to each movie result
         movieListItem.classList.add('search-list-item'); //Add CSS
         //Set poster image address
-        if (movies[i].Poster != "N/A")
+        if (movies[id].Poster != "N/A")
          {
-            moviePoster = movies[i].Poster; // Set found image address
+            moviePoster = movies[id].Poster; // Set found image address
         } 
         else {
             moviePoster = "Assets/NO_Image.png"; //If image not found then set default image
@@ -53,8 +53,8 @@ const displayMovieList = (movies) => {
             <img src="${moviePoster}" alt="movie">
         </div>
         <div class="search-item-info">
-            <h3>${movies[i].Title}</h3>
-            <p>${movies[i].Year}</p>
+            <h3>${movies[id].Title}</h3>
+            <p>${movies[id].Year}</p>
         </div>
         `;
         searchList.appendChild(movieListItem); //Add a matched movie to autocomplete list
@@ -69,7 +69,7 @@ const loadMovieDetails = () => {
     searchListMovies.forEach(movie => {
         movie.addEventListener('click', async () => {
             searchList.classList.add('hide-search-list'); //Add CSS
-            SearchBox.value = ""; //Reset search box
+            movieSearchBox.value = ""; //Reset search box
             localStorage.setItem('movieID',movie.dataset.id); // Set movie id to localstorage for later use
             let dir = window.location.origin + "MoviePage/moviePg.html"; // Custom URL for result page
             window.location.href = "MoviePage/moviePg.html"; //Redirect to a new page
@@ -84,6 +84,6 @@ window.addEventListener('click', (event) => {
         searchList.classList.add('hide-search-list'); // Hide autocomplete box if user click anywhere other than autocomplete box
     }
 })
-SearchBox.addEventListener('keyup', findMovies);
-SearchBox.addEventListener('click', findMovies);
+movieSearchBox.addEventListener('keyup', findMovies);
+movieSearchBox.addEventListener('click', findMovies);
 
