@@ -10,7 +10,7 @@ if(!localStorage.getItem('favMovies')){
 // Function to get movies from Omdb API
 async function loadMovies(movieId) {                                           // movieId here is Movie Name.
     const URL = `http://www.omdbapi.com/?s=${movieId}&page=1&apikey=76ef9c9f`; //Base URL
-    const res = await fetch(`${URL}`); //Fetch data from server
+    const res = await fetch(URL); //Fetch data from server
     const data = await res.json(); //Arrange data to readable format (JSON)
     // Check if everything is Okay
     if (data.Response == "True") {
