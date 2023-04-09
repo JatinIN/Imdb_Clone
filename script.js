@@ -71,6 +71,14 @@ const loadMovieDetails = () => {
             searchList.classList.add('hide-search-list'); //Add CSS
             movieSearchBox.value = ""; //Reset search box
 
+            // For Local Machine Run
+
+            // localStorage.setItem('movieID',movie.dataset.id); // Set movie id to localstorage for later use
+            // let dir = window.location.origin + "/MoviePage/moviePg.html"; // Custom URL for result page
+            // window.location.href = "/MoviePage/moviePg.html"; //Redirect to a new page
+
+            //For GitHub Run
+
             localStorage.setItem('movieID',movie.dataset.id); // Set movie id to localstorage for later use
             let dir = window.location.origin + "/MoviePage/moviePg.html"; // Custom URL for result page
             window.location.href = "https://jatinin.github.io/Imdb_Clone/MoviePage/moviePg.html"; //Redirect to a new page
