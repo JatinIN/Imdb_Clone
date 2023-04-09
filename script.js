@@ -72,8 +72,8 @@ const loadMovieDetails = () => {
             movieSearchBox.value = ""; //Reset search box
 
             localStorage.setItem('movieID',movie.dataset.id); // Set movie id to localstorage for later use
-            let dir = window.location.origin + "/Imdb_Clone/MoviePage/moviePg.html"; // Custom URL for result page
-            window.location.href = "https://github.com/JatinIN/Imdb_Clone/MoviePage/moviePg.html"; //Redirect to a new page
+            let dir = window.location.origin + "/MoviePage/moviePg.html"; // Custom URL for result page
+            window.location.href = "https://jatinin.github.io/Imdb_Clone/MoviePage/moviePg.html"; //Redirect to a new page
         });
     });
 }

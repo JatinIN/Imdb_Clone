@@ -5,7 +5,7 @@ let favMovies = JSON.parse(localStorage.getItem('favMovies'));
 
 //Get Movies from Server
 async function getData(movieID) {
-    const result = await fetch(`http://www.omdbapi.com/?i=${movieID}&apikey=76ef9c9f`); //Get data from API
+    const result = await fetch(`https://www.omdbapi.com/?i=${movieID}&apikey=76ef9c9f`); //Get data from API
     const movieDetails = await result.json(); //Make data readable
     AddMovie(movieDetails); //Add to DOM
 }
