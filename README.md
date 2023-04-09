@@ -1,4 +1,4 @@
-🪧 Host Link :- https://jatinin.github.io/MoviePage/moviePg.html
+🪧 Host Link :- https://jatinin.github.io/Imdb_Clone/
 
 
 
@@ -13,6 +13,7 @@ Imdb_Clone Project Using VanillaJs Through API
 ---<>Contains<>----
 
 $_Omdb API
+
 -->Contain Functions<--
 loadMovies()
 displayMovieList() 
