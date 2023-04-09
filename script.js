@@ -9,9 +9,10 @@ if(!localStorage.getItem('favMovies')){
 }
 // Load movies from API
 async function loadMovies(searchTerm) {
-    const URL = `http://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=755f786c`; //Base URL
+    const URL = `https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=755f786c`; //Base URL
     const res = await fetch(`${URL}`); //Fetch data from server
     const data = await res.json(); //Arrange data to readable format (JSON)
+    console.log(res.status);
     // Check if everything is Okay
     if (data.Response == "True") {
         displayMovieList(data.Search); //then display the autocomplete box
